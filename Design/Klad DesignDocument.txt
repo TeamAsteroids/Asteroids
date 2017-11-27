@@ -1,0 +1,25 @@
+levels
+
+asteroids
+	grootte
+	hoeveelheid
+	hardheid (aantal schoten nodig)
+	snelheid
+
+speler
+	snelheid
+	grootte
+	upgrades?
+	
+
+camera
+	wisselend hoever uitgezoomed?
+	staat die stil of volgt hij de camera?
+	Volgt de camera de player in bepaalde levels?
+
+highscore
+	naam
+		invullen na de game / invullen opstarten game / eenmalig invullen / account systeem
+	highscore
+		gebasseerd op tijd / gebasseerd op toegekende punten
+		modifier?
