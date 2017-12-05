@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/HighScore input.unity
+  isLoaded: 1
+  isActive: 1
