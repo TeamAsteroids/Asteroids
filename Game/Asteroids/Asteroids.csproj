@@ -76,10 +76,15 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Data">
+      <HintPath>Assets\System.Data.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\AsteroidController.cs" />
     <Compile Include="Assets\Scripts\BullletController.cs" />
+    <Compile Include="Assets\Scripts\Class1.cs" />
+    <Compile Include="Assets\Scripts\HighScoreinput.cs" />
     <Compile Include="Assets\Scripts\VirtualKeyboard.cs" />
     <Compile Include="Assets\Scripts\gameController.cs" />
   </ItemGroup>
