@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/hscore.unity
-=======
-- path: Assets/_Scenes/Game.unity
->>>>>>> d38b30a9446953110f71db0d8b6113dfadb5846c
   isLoaded: 1
   isActive: 1

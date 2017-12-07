@@ -12,7 +12,7 @@ using UnityEngine.UI;
 
 public class HighScoreinput : MonoBehaviour
 {
-    internal SqlConnection conn = new SqlConnection();
+    SqlConnection conn = new SqlConnection("Server= LocalHost; Database= Astroids; User Id=Root; Password = ;");
     internal Button btn;
     public InputField nameInputField;
     public Button btnHScore;
@@ -22,16 +22,13 @@ public class HighScoreinput : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        
+
         nameInputField = nameInputField.GetComponent<InputField>();
         btn = btnHScore.GetComponent<Button>();
-        btn.onClick.AddListener(TaskOnClick);
+        //btn.onClick.AddListener(TaskOnClick);
         HighScore = 0;
-        conn.ConnectionString =
-        "Data Source= 127.0.0.1;" +
-        "Initial Catalog= Astroids;" +
-        "User id= Root;" +
-        "Password=;";
-
+    
     }
 
     // Update is called once per frame
@@ -39,58 +36,46 @@ public class HighScoreinput : MonoBehaviour
     {
         if (btnHScore.enabled)
         {
-            ClickHighInput();
+            //ClickHighInput();
+           
         }
-        
-    }
-    private void TaskOnClick()
-    {
-        Debug.Log("You have clicked the button!");
-        string name = nameInputField.text;
-        ulong score = HighScore;
-        string query = "INSERT INTO Highscore (Score, Name)VALUES({0}, {1});, ";
-
-
-        conn.Open();
-        SqlCommand command = new SqlCommand(query, conn);
-        command.Connection.Open();
-        command.ExecuteNonQuery();
-        conn.Close();
+        Debug.Log(conn.ConnectionString);
+ 
 
 
     }
+    //private void TaskOnClick()
+    //{
+    //    Debug.Log("You have clicked the button!");
+    //    string name = nameInputField.text;
+    //    ulong score = HighScore;
+    //    string query = "INSERT INTO Highscore (Score, Name)VALUES({0}, {1});, ";
+
+
+    //    conn.Open();
+    //    SqlCommand command = new SqlCommand(query, conn);
+    //    command.Connection.Open();
+    //    command.ExecuteNonQuery();
+    //    conn.Close();
+
+
+    //}
     public void ClickHighInput()
     {
+
         HighScore = 0;
-        conn.ConnectionString =
-        "Data Source= 127.0.0.1;" +
-        "Initial Catalog= Astroids;" +
-        "User id= Root;" +
-        "Password=;";
+
 
         Debug.Log("You have clicked the button!");
         string name = nameInputField.text;
         ulong score = HighScore;
-        string query = "INSERT INTO Highscore (Score, Name)VALUES(" + score + "," + name + ");";
+        string query = "INSERT INTO HighScores (Score, Name)VALUES(" + score + "," + name + ");";
 
 
-        conn.Open();
         SqlCommand command = new SqlCommand(query, conn);
         command.Connection.Open();
         command.ExecuteNonQuery();
-        conn.Close();
+      
     }
-    private void Connect()
-    {
-       string server = "localhost";
-       string database = "connectcsharptomysql";
-       string uid = "username";
-       string password = "password";
-       string connectionString;
 
-        connectionString = "SERVER=" + server + ";" + "DATABASE=" +
-        database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
-
-      //  MySqlConnection conn = new MySqlConnection(connectionString);
-    }
 }
