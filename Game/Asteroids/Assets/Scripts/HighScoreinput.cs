@@ -5,8 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using MySql.Data;
-using MySql.Data.MySqlClient
+
 
 
 
@@ -92,6 +91,6 @@ public class HighScoreinput : MonoBehaviour
         connectionString = "SERVER=" + server + ";" + "DATABASE=" +
         database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 
-        MySqlConnection conn = new MySqlConnection(connectionString);
+      //  MySqlConnection conn = new MySqlConnection(connectionString);
     }
 }
